@@ -1,3 +1,2 @@
 #!/bin/bash
-cp /root/holbertselect 
-honschool-shell/*.html /root/holberthonschool-shell
+cp /root/holbertonschool-shell/*.html /root/holberthonschool-shell
