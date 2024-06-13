@@ -1,0 +1,19 @@
+#!/bin/bash
+cp 13-change_group /tmp
+cd /tmp
+# Supprimer le groupe 'school' s'il existe, et le fichier 'hello' s'il existe
+groupdel school 2>/dev/null
+rm hello 2>/dev/null
+# Créer un fichier 'hello'
+touch hello
+# Créer le groupe 'school'
+groupadd school
+# Assurez-vous que le script 13-change_group a les permissions d'exécution
+chmod +x ./13-change_group
+# Exécuter le script pour changer le groupe de 'hello'
+./13-change_group
+# Vérifier le groupe propriétaire du fichier 'hello'
+ls -l hello | cut -d' ' -f4
+# Supprimer le groupe 'school' et le fichier 'hello' pour nettoyer
+groupdel school
+rm hello
